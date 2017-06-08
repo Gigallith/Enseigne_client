@@ -14,14 +14,21 @@ public class User {
     private String password;
     private List<GiftCard> giftCards;
     private LoyaltyCard loyaltyCard;
-    private List<User> sponsored;
 
-    public User(String name, String mail, LoyaltyCard loyaltyCard) {
+    public User(String name, String mail) {
+
         this.name = name;
         this.mail = mail;
-        this.loyaltyCard = loyaltyCard;
-        this.sponsored = new ArrayList<>();
         this.giftCards = new ArrayList<>();
+        this.loyaltyCard = new LoyaltyCard();
+    }
+
+    public User(String name, String mail, String password) {
+        this.name = name;
+        this.mail = mail;
+        this.password = password;
+        this.loyaltyCard = new LoyaltyCard();
+
     }
 
     public String getName() {
@@ -40,19 +47,18 @@ public class User {
         return loyaltyCard;
     }
 
-    public List<User> getSponsored() {
-        return sponsored;
+
+    public void setLoyaltyCard(LoyaltyCard loyaltyCard) {
+        this.loyaltyCard = loyaltyCard;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public void addSponsored(User user) {
-        this.sponsored.add(user);
-    }
-
     public void addGiftCard(GiftCard giftCard) {
         this.giftCards.add(giftCard);
     }
+
+
 }

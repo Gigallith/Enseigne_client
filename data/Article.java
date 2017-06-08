@@ -10,11 +10,13 @@ class Article {
     String picture;
     int price;
     int loyalty_price;
+    int sale_price;
 
     public Article(String name, String picture, int price) {
         this.name = name;
         this.picture = picture;
         this.price=price;
+        this.loyalty_price=price*100;
     }
 
     public String getPicture() {
@@ -33,7 +35,11 @@ class Article {
         return loyalty_price;
     }
 
-    public void setLoyalty_price(int loyalty_price) {
-        this.loyalty_price = loyalty_price;
+    public int getSale_price() {
+        return sale_price;
+    }
+
+    public void setSale_price(int sale_price) {
+        this.sale_price = sale_price;
     }
 }
